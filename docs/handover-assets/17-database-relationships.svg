@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760">
+  <rect width="1400" height="760" fill="#f6f8fc"/>
+  <text x="70" y="55" font-family="Arial" font-size="30" font-weight="700" fill="#0f172a">Simplified database relationships</text>
+  <text x="70" y="88" font-family="Arial" font-size="17" fill="#475569">The diagram groups related tables; it intentionally omits low-level columns.</text>
+  <g font-family="Arial">
+    <g fill="#eff6ff" stroke="#3b82f6" stroke-width="2"><rect x="70" y="140" width="240" height="80" rx="14"/><rect x="70" y="280" width="240" height="80" rx="14"/></g>
+    <text x="190" y="178" text-anchor="middle" font-size="18" font-weight="700" fill="#1e3a8a">questionnaire_versions</text><text x="190" y="202" text-anchor="middle" font-size="14" fill="#475569">active/versioned JSON</text>
+    <text x="190" y="318" text-anchor="middle" font-size="18" font-weight="700" fill="#1e3a8a">rule_config_versions</text><text x="190" y="342" text-anchor="middle" font-size="14" fill="#475569">weights and profiles</text>
+    <g fill="#ecfdf5" stroke="#10b981" stroke-width="2"><rect x="420" y="120" width="245" height="90" rx="14"/><rect x="420" y="270" width="245" height="90" rx="14"/><rect x="420" y="420" width="245" height="90" rx="14"/></g>
+    <text x="542" y="158" text-anchor="middle" font-size="18" font-weight="700" fill="#065f46">assessment_sessions</text><text x="542" y="183" text-anchor="middle" font-size="14" fill="#475569">progress tracking</text>
+    <text x="542" y="308" text-anchor="middle" font-size="18" font-weight="700" fill="#065f46">assessment_drafts</text><text x="542" y="333" text-anchor="middle" font-size="14" fill="#475569">participant token + status</text>
+    <text x="542" y="458" text-anchor="middle" font-size="18" font-weight="700" fill="#065f46">assessment_submissions</text><text x="542" y="483" text-anchor="middle" font-size="14" fill="#475569">project profile</text>
+    <g fill="#fff7ed" stroke="#f59e0b" stroke-width="2"><rect x="780" y="130" width="250" height="80" rx="14"/><rect x="780" y="260" width="250" height="80" rx="14"/><rect x="780" y="390" width="250" height="80" rx="14"/><rect x="780" y="520" width="250" height="80" rx="14"/></g>
+    <text x="905" y="178" text-anchor="middle" font-size="18" font-weight="700" fill="#92400e">assessment_documents</text>
+    <text x="905" y="308" text-anchor="middle" font-size="18" font-weight="700" fill="#92400e">processing jobs/pages/chunks</text>
+    <text x="905" y="438" text-anchor="middle" font-size="18" font-weight="700" fill="#92400e">evidence/facts/citations</text>
+    <text x="905" y="568" text-anchor="middle" font-size="18" font-weight="700" fill="#92400e">assessment_answers</text>
+    <g fill="#f5f3ff" stroke="#8b5cf6" stroke-width="2"><rect x="1130" y="420" width="220" height="80" rx="14"/><rect x="1130" y="540" width="220" height="80" rx="14"/><rect x="1130" y="140" width="220" height="80" rx="14"/></g>
+    <text x="1240" y="468" text-anchor="middle" font-size="18" font-weight="700" fill="#5b21b6">assessment_results</text>
+    <text x="1240" y="579" text-anchor="middle" font-size="15" font-weight="700" fill="#5b21b6">assessment_</text>
+    <text x="1240" y="598" text-anchor="middle" font-size="15" font-weight="700" fill="#5b21b6">traditional_advisors</text>
+    <text x="1240" y="188" text-anchor="middle" font-size="18" font-weight="700" fill="#5b21b6">admin_users</text>
+    <g stroke="#64748b" stroke-width="3" fill="none"><path d="M542 210 V270"/><path d="M542 360 V420"/><path d="M665 315 H780"/><path d="M905 210 V260"/><path d="M905 340 V390"/><path d="M665 465 H780 V560"/><path d="M1030 560 H1130 V460"/><path d="M665 465 H1130"/><path d="M1240 500 V540"/></g>
+    <g font-size="14" font-weight="700" fill="#64748b">
+      <text x="552" y="245">may create</text>
+      <rect x="674" y="256" width="102" height="24" rx="5" fill="#f6f8fc"/>
+      <text x="682" y="273">has documents</text>
+      <rect x="1054" y="434" width="72" height="24" rx="5" fill="#f6f8fc"/>
+      <text x="1065" y="451">one result</text>
+    </g>
+    <rect x="70" y="655" width="1280" height="60" rx="14" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="710" y="692" text-anchor="middle" font-size="16" fill="#334155">Version numbers are copied into each stored result so later configuration changes do not change the meaning of historical assessments.</text>
+  </g>
+</svg>

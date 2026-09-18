@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="620" viewBox="0 0 1400 620">
+  <rect width="1400" height="620" fill="#f6f8fc"/>
+  <text x="70" y="60" font-family="Arial" font-size="30" font-weight="700" fill="#0f172a">Two access-control paths</text>
+  <text x="70" y="94" font-family="Arial" font-size="17" fill="#475569">Participants are isolated to one assessment draft; administrators use named accounts and role permissions.</text>
+  <g font-family="Arial">
+    <rect x="70" y="145" width="1260" height="175" rx="20" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+    <text x="100" y="184" font-size="22" font-weight="700" fill="#1e3a8a">Participant path</text>
+    <rect x="105" y="215" width="220" height="70" rx="14" fill="#fff" stroke="#94a3b8"/><text x="215" y="258" text-anchor="middle" font-size="16" font-weight="700" fill="#0f172a">Create draft</text>
+    <path d="M335 250 H420" stroke="#64748b" stroke-width="3"/><path d="M420 250 l-12 -8 v16 z" fill="#64748b"/>
+    <rect x="435" y="215" width="270" height="70" rx="14" fill="#fff" stroke="#94a3b8"/><text x="570" y="245" text-anchor="middle" font-size="16" font-weight="700" fill="#0f172a">Random participant token</text><text x="570" y="267" text-anchor="middle" font-size="14" fill="#475569">hash stored with draft</text>
+    <path d="M715 250 H800" stroke="#64748b" stroke-width="3"/><path d="M800 250 l-12 -8 v16 z" fill="#64748b"/>
+    <rect x="815" y="215" width="220" height="70" rx="14" fill="#fff" stroke="#94a3b8"/><text x="925" y="245" text-anchor="middle" font-size="16" font-weight="700" fill="#0f172a">HTTP-only cookie</text><text x="925" y="267" text-anchor="middle" font-size="14" fill="#475569">browser carries token</text>
+    <path d="M1045 250 H1130" stroke="#64748b" stroke-width="3"/><path d="M1130 250 l-12 -8 v16 z" fill="#64748b"/>
+    <rect x="1145" y="215" width="150" height="70" rx="14" fill="#ecfdf5" stroke="#10b981"/><text x="1220" y="245" text-anchor="middle" font-size="15" font-weight="700" fill="#065f46">Draft/document</text><text x="1220" y="267" text-anchor="middle" font-size="15" font-weight="700" fill="#065f46">access only</text>
+    <rect x="70" y="365" width="1260" height="190" rx="20" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+    <text x="100" y="404" font-size="22" font-weight="700" fill="#065f46">Administrator path</text>
+    <rect x="105" y="440" width="200" height="75" rx="14" fill="#fff" stroke="#94a3b8"/><text x="205" y="472" text-anchor="middle" font-size="16" font-weight="700" fill="#0f172a">Email + password</text><text x="205" y="495" text-anchor="middle" font-size="14" fill="#475569">bcrypt verification</text>
+    <path d="M315 477 H395" stroke="#64748b" stroke-width="3"/><path d="M395 477 l-12 -8 v16 z" fill="#64748b"/>
+    <rect x="410" y="440" width="200" height="75" rx="14" fill="#fff" stroke="#94a3b8"/><text x="510" y="472" text-anchor="middle" font-size="16" font-weight="700" fill="#0f172a">Signed JWT</text><text x="510" y="495" text-anchor="middle" font-size="14" fill="#475569">stored by admin UI</text>
+    <path d="M620 477 H700" stroke="#64748b" stroke-width="3"/><path d="M700 477 l-12 -8 v16 z" fill="#64748b"/>
+    <rect x="715" y="440" width="220" height="75" rx="14" fill="#fff" stroke="#94a3b8"/><text x="825" y="472" text-anchor="middle" font-size="16" font-weight="700" fill="#0f172a">Auth middleware</text><text x="825" y="495" text-anchor="middle" font-size="14" fill="#475569">validates bearer token</text>
+    <path d="M945 477 H1025" stroke="#64748b" stroke-width="3"/><path d="M1025 477 l-12 -8 v16 z" fill="#64748b"/>
+    <rect x="1040" y="440" width="255" height="75" rx="14" fill="#f5f3ff" stroke="#8b5cf6"/><text x="1167" y="472" text-anchor="middle" font-size="16" font-weight="700" fill="#5b21b6">Role permission check</text><text x="1167" y="495" text-anchor="middle" font-size="14" fill="#475569">analyst · editor · super admin</text>
+  </g>
+</svg>

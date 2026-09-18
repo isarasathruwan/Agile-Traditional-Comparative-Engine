@@ -1,0 +1,83 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: methodalign_postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: methodalign
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d methodalign"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    volumes:
+      - methodalign_pgdata:/var/lib/postgresql/data
+
+  backend:
+    build: .
+    container_name: methodalign_backend
+    env_file:
+      - .env
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: methodalign
+      POSTGRES_DRIVER: psycopg
+      ASSESSMENT_DOCUMENTS_DIR: /var/lib/methodalign/documents
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - methodalign_documents:/var/lib/methodalign/documents
+
+  document-worker:
+    build: .
+    container_name: methodalign_document_worker
+    env_file:
+      - .env
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: methodalign
+      POSTGRES_DRIVER: psycopg
+      ASSESSMENT_DOCUMENTS_DIR: /var/lib/methodalign/documents
+    depends_on:
+      backend:
+        condition: service_started
+    volumes:
+      - methodalign_documents:/var/lib/methodalign/documents
+    entrypoint: ["python", "document_worker.py"]
+
+  traditional-advisor-worker:
+    build: .
+    container_name: methodalign_traditional_advisor_worker
+    env_file:
+      - .env
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: methodalign
+      POSTGRES_DRIVER: psycopg
+      TRADITIONAL_ADVISOR_WORKER_POLL_SECONDS: ${TRADITIONAL_ADVISOR_WORKER_POLL_SECONDS:-2}
+      TRADITIONAL_ADVISOR_RETRY_LIMIT: ${TRADITIONAL_ADVISOR_RETRY_LIMIT:-3}
+    depends_on:
+      backend:
+        condition: service_started
+    volumes:
+      - methodalign_documents:/var/lib/methodalign/documents
+    entrypoint: ["python", "traditional_advisor_worker.py"]
+
+volumes:
+  methodalign_pgdata:
+  methodalign_documents:

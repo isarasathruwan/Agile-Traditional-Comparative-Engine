@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="720" viewBox="0 0 1400 720">
+  <rect width="1400" height="720" fill="#f6f8fc"/>
+  <text x="70" y="60" font-family="Arial" font-size="30" font-weight="700" fill="#0f172a">Repository map</text>
+  <text x="70" y="94" font-family="Arial" font-size="17" fill="#475569">The folders are separated by responsibility so the UI, business logic, data, deployment, and documentation can be understood independently.</text>
+  <g font-family="Arial">
+    <rect x="70" y="135" width="1260" height="520" rx="20" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
+    <rect x="105" y="175" width="360" height="205" rx="16" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+    <text x="135" y="215" font-size="23" font-weight="700" fill="#1e3a8a">frontend/</text>
+    <text x="135" y="250" font-size="16" fill="#334155">app/ — routes and page composition</text>
+    <text x="135" y="280" font-size="16" fill="#334155">components/ — reusable screens and charts</text>
+    <text x="135" y="310" font-size="16" fill="#334155">lib/ — API clients and helpers</text>
+    <text x="135" y="340" font-size="16" fill="#334155">tests/ — unit and browser journeys</text>
+    <rect x="520" y="175" width="500" height="355" rx="16" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+    <text x="550" y="215" font-size="23" font-weight="700" fill="#065f46">backend/</text>
+    <text x="550" y="250" font-size="16" fill="#334155">main.py — API startup and router registration</text>
+    <text x="550" y="280" font-size="16" fill="#334155">app/controller/ — HTTP endpoints</text>
+    <text x="550" y="310" font-size="16" fill="#334155">app/service/ — decisions and workflows</text>
+    <text x="550" y="340" font-size="16" fill="#334155">app/repository/ — database queries</text>
+    <text x="550" y="370" font-size="16" fill="#334155">app/entity/ — database table models</text>
+    <text x="550" y="400" font-size="16" fill="#334155">app/model/ — API request/response shapes</text>
+    <text x="550" y="430" font-size="16" fill="#334155">app/config/ + util/ — shared infrastructure</text>
+    <text x="550" y="460" font-size="16" fill="#334155">alembic/ — versioned database changes</text>
+    <text x="550" y="490" font-size="16" fill="#334155">*_worker.py — background processing loops</text>
+    <rect x="1075" y="175" width="220" height="165" rx="16" fill="#fff7ed" stroke="#f59e0b" stroke-width="2"/>
+    <text x="1105" y="215" font-size="23" font-weight="700" fill="#92400e">docs/</text>
+    <text x="1105" y="250" font-size="16" fill="#334155">Handover</text>
+    <text x="1105" y="280" font-size="16" fill="#334155">Rules and research</text>
+    <text x="1105" y="310" font-size="16" fill="#334155">Testing evidence</text>
+    <rect x="105" y="430" width="360" height="100" rx="16" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="135" y="468" font-size="22" font-weight="700" fill="#5b21b6">nginx/</text>
+    <text x="135" y="500" font-size="16" fill="#334155">Optional local HTTP reverse proxy</text>
+    <rect x="105" y="565" width="1190" height="60" rx="14" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+    <text x="135" y="602" font-size="17" font-weight="700" fill="#0f172a">Root files:</text>
+    <text x="235" y="602" font-size="16" fill="#334155">docker-compose.yml · docker-compose.nginx.yml · README.md · DEPLOY.md</text>
+  </g>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="720" viewBox="0 0 1400 720">
+  <rect width="1400" height="720" fill="#f6f8fc"/>
+  <text x="70" y="55" font-family="Arial" font-size="30" font-weight="700" fill="#0f172a">Assessment submission sequence</text>
+  <g font-family="Arial" font-size="16">
+    <g fill="#fff" stroke="#94a3b8" stroke-width="2"><rect x="70" y="90" width="210" height="55" rx="12"/><rect x="360" y="90" width="210" height="55" rx="12"/><rect x="650" y="90" width="210" height="55" rx="12"/><rect x="940" y="90" width="210" height="55" rx="12"/><rect x="1210" y="90" width="140" height="55" rx="12"/></g>
+    <g font-weight="700" fill="#0f172a" text-anchor="middle"><text x="175" y="124">Browser</text><text x="465" y="124">API controller</text><text x="755" y="124">AssessmentService</text><text x="1045" y="124">EngineService</text><text x="1280" y="124">Database</text></g>
+    <g stroke="#cbd5e1" stroke-width="2" stroke-dasharray="6 6"><path d="M175 155 V660"/><path d="M465 155 V660"/><path d="M755 155 V660"/><path d="M1045 155 V660"/><path d="M1280 155 V660"/></g>
+    <g fill="#334155">
+      <path d="M175 190 H455" stroke="#1d4ed8" stroke-width="3"/><path d="M455 190 l-12 -8 v16 z" fill="#1d4ed8"/><text x="220" y="180">POST profile + 12 answers + draft ID</text>
+      <path d="M465 245 H745" stroke="#1d4ed8" stroke-width="3"/><path d="M745 245 l-12 -8 v16 z" fill="#1d4ed8"/><text x="500" y="235">Validated request model + participant cookie</text>
+      <path d="M755 300 H1270" stroke="#f59e0b" stroke-width="3"/><path d="M1270 300 l-12 -8 v16 z" fill="#f59e0b"/><text x="800" y="290">Load active questionnaire, rules, draft and confirmed evidence</text>
+      <path d="M755 360 H1035" stroke="#10b981" stroke-width="3"/><path d="M1035 360 l-12 -8 v16 z" fill="#10b981"/><text x="800" y="350">Construct scores + active rules</text>
+      <path d="M1045 415 H765" stroke="#10b981" stroke-width="3"/><path d="M765 415 l12 -8 v16 z" fill="#10b981"/><text x="800" y="405">Agile score, Traditional score, recommendation</text>
+      <path d="M755 475 H1270" stroke="#f59e0b" stroke-width="3"/><path d="M1270 475 l-12 -8 v16 z" fill="#f59e0b"/><text x="800" y="465">Save submission, answers, report, versions and advisor job</text>
+      <path d="M755 535 H475" stroke="#1d4ed8" stroke-width="3"/><path d="M475 535 l12 -8 v16 z" fill="#1d4ed8"/><text x="500" y="525">GenericResponse with AssessmentResultData</text>
+      <path d="M465 595 H185" stroke="#1d4ed8" stroke-width="3"/><path d="M185 595 l12 -8 v16 z" fill="#1d4ed8"/><text x="220" y="585">201 JSON response</text>
+      <text x="175" y="645" text-anchor="middle" font-weight="700" fill="#065f46">Render ResultWorkspace</text>
+    </g>
+  </g>
+</svg>

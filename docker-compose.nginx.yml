@@ -1,0 +1,36 @@
+# Production override: adds an Nginx reverse proxy as the single entry point.
+# Usage: docker compose -f docker-compose.yml -f docker-compose.nginx.yml up -d
+#
+# With this setup:
+#   - Access the app at http://localhost (port 80)
+#   - /api/* routes are proxied to the backend
+#   - Everything else is served by the Next.js frontend
+#
+# Build the frontend with a relative API URL so the browser talks to Nginx:
+#   NEXT_PUBLIC_API_BASE_URL=/api
+
+services:
+  nginx:
+    image: nginx:alpine
+    container_name: methodalign-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - frontend
+      - backend
+    networks:
+      - methodalign-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_API_BASE_URL: ${NEXT_PUBLIC_API_BASE_URL:-/api}
+    ports: []  # Do not expose frontend port directly; access via Nginx
+
+  backend:
+    ports: []  # Do not expose backend port directly; access via Nginx

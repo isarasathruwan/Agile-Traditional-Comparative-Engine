@@ -1,0 +1,760 @@
+{
+  "analysis_date": "2026-07-27",
+  "random_seed": 20260727,
+  "raw_sample_size": 111,
+  "cleaned_sample_size": 107,
+  "excluded_source_rows": [
+    64,
+    79,
+    83,
+    97
+  ],
+  "exclusion_reason": "Probable duplicate/copy responses; no valid scale-value outliers removed.",
+  "distributions": {
+    "methodology": {
+      "Agile": 54,
+      "Hybrid": 26,
+      "Traditional": 27
+    },
+    "experience": {
+      "< 2 years": 31,
+      "2\u20135 years": 43,
+      "5\u201310 years": 26,
+      "10+ years": 7
+    },
+    "industry": {
+      "IT / Software": 72,
+      "Healthcare": 13,
+      "Banking / Finance": 12,
+      "Government": 6,
+      "Retail": 1,
+      "E-Commerce": 2,
+      "Logistics": 1
+    },
+    "role": {
+      "Project Manager": 24,
+      "Software Developer": 27,
+      "Business Analyst": 13,
+      "AI Engineer": 1,
+      "QA Engineer": 12,
+      "Cybersecurity engineer": 1,
+      "IS Auditor": 1,
+      "System Analyst": 11,
+      "Data Governance Officer": 1,
+      "UX Designer": 1,
+      "DevOps Engineer": 4,
+      "Product Owner": 1,
+      "Scrum Master": 1,
+      "Other: Technical Lead": 1,
+      "IT Support Engineer": 3,
+      "Full Stack Developer": 4,
+      "Data Engineer": 1
+    }
+  },
+  "factor_means": {
+    "Overall": {
+      "requirements_change": 3.215,
+      "stakeholder_involvement": 3.4206,
+      "deadline_pressure": 3.6822,
+      "budget_pressure": 3.9159,
+      "project_risk": 3.3738,
+      "integration_complexity": 3.4579,
+      "security_requirements": 3.6262,
+      "documentation_need": 3.3551,
+      "project_size": 2.0561,
+      "flexibility_need": 3.3738,
+      "success": 4.0374
+    },
+    "Agile": {
+      "requirements_change": 4.0185,
+      "stakeholder_involvement": 3.9259,
+      "deadline_pressure": 3.2222,
+      "budget_pressure": 3.4444,
+      "project_risk": 2.9074,
+      "integration_complexity": 3.1111,
+      "security_requirements": 3.037,
+      "documentation_need": 2.6111,
+      "project_size": 1.5556,
+      "flexibility_need": 4.2222,
+      "success": 4.1296
+    },
+    "Hybrid": {
+      "requirements_change": 2.9231,
+      "stakeholder_involvement": 3.1538,
+      "deadline_pressure": 4.0,
+      "budget_pressure": 4.1923,
+      "project_risk": 3.3846,
+      "integration_complexity": 3.4615,
+      "security_requirements": 3.7308,
+      "documentation_need": 3.5769,
+      "project_size": 2.2308,
+      "flexibility_need": 3.1923,
+      "success": 3.9615
+    },
+    "Traditional": {
+      "requirements_change": 1.8889,
+      "stakeholder_involvement": 2.6667,
+      "deadline_pressure": 4.2963,
+      "budget_pressure": 4.5926,
+      "project_risk": 4.2963,
+      "integration_complexity": 4.1481,
+      "security_requirements": 4.7037,
+      "documentation_need": 4.6296,
+      "project_size": 2.8889,
+      "flexibility_need": 1.8519,
+      "success": 3.9259
+    }
+  },
+  "factor_descriptives": {
+    "requirements_change": {
+      "Overall": {
+        "n": 107,
+        "mean": 3.215,
+        "sd": 1.0818
+      },
+      "Agile": {
+        "n": 54,
+        "mean": 4.0185,
+        "sd": 0.5317
+      },
+      "Hybrid": {
+        "n": 26,
+        "mean": 2.9231,
+        "sd": 0.6276
+      },
+      "Traditional": {
+        "n": 27,
+        "mean": 1.8889,
+        "sd": 0.7511
+      }
+    },
+    "stakeholder_involvement": {
+      "Overall": {
+        "n": 107,
+        "mean": 3.4206,
+        "sd": 0.932
+      },
+      "Agile": {
+        "n": 54,
+        "mean": 3.9259,
+        "sd": 0.8434
+      },
+      "Hybrid": {
+        "n": 26,
+        "mean": 3.1538,
+        "sd": 0.7317
+      },
+      "Traditional": {
+        "n": 27,
+        "mean": 2.6667,
+        "sd": 0.6202
+      }
+    },
+    "deadline_pressure": {
+      "Overall": {
+        "n": 107,
+        "mean": 3.6822,
+        "sd": 1.015
+      },
+      "Agile": {
+        "n": 54,
+        "mean": 3.2222,
+        "sd": 1.1271
+      },
+      "Hybrid": {
+        "n": 26,
+        "mean": 4.0,
+        "sd": 0.5657
+      },
+      "Traditional": {
+        "n": 27,
+        "mean": 4.2963,
+        "sd": 0.6086
+      }
+    },
+    "budget_pressure": {
+      "Overall": {
+        "n": 107,
+        "mean": 3.9159,
+        "sd": 0.9124
+      },
+      "Agile": {
+        "n": 54,
+        "mean": 3.4444,
+        "sd": 0.9042
+      },
+      "Hybrid": {
+        "n": 26,
+        "mean": 4.1923,
+        "sd": 0.6337
+      },
+      "Traditional": {
+        "n": 27,
+        "mean": 4.5926,
+        "sd": 0.5724
+      }
+    },
+    "project_risk": {
+      "Overall": {
+        "n": 107,
+        "mean": 3.3738,
+        "sd": 0.9062
+      },
+      "Agile": {
+        "n": 54,
+        "mean": 2.9074,
+        "sd": 0.7835
+      },
+      "Hybrid": {
+        "n": 26,
+        "mean": 3.3846,
+        "sd": 0.5711
+      },
+      "Traditional": {
+        "n": 27,
+        "mean": 4.2963,
+        "sd": 0.6688
+      }
+    },
+    "integration_complexity": {
+      "Overall": {
+        "n": 107,
+        "mean": 3.4579,
+        "sd": 0.8499
+      },
+      "Agile": {
+        "n": 54,
+        "mean": 3.1111,
+        "sd": 0.8165
+      },
+      "Hybrid": {
+        "n": 26,
+        "mean": 3.4615,
+        "sd": 0.5818
+      },
+      "Traditional": {
+        "n": 27,
+        "mean": 4.1481,
+        "sd": 0.7181
+      }
+    },
+    "security_requirements": {
+      "Overall": {
+        "n": 107,
+        "mean": 3.6262,
+        "sd": 1.0686
+      },
+      "Agile": {
+        "n": 54,
+        "mean": 3.037,
+        "sd": 0.9509
+      },
+      "Hybrid": {
+        "n": 26,
+        "mean": 3.7308,
+        "sd": 0.8274
+      },
+      "Traditional": {
+        "n": 27,
+        "mean": 4.7037,
+        "sd": 0.4653
+      }
+    },
+    "documentation_need": {
+      "Overall": {
+        "n": 107,
+        "mean": 3.3551,
+        "sd": 1.1431
+      },
+      "Agile": {
+        "n": 54,
+        "mean": 2.6111,
+        "sd": 0.9599
+      },
+      "Hybrid": {
+        "n": 26,
+        "mean": 3.5769,
+        "sd": 0.5038
+      },
+      "Traditional": {
+        "n": 27,
+        "mean": 4.6296,
+        "sd": 0.5649
+      }
+    },
+    "project_size": {
+      "Overall": {
+        "n": 107,
+        "mean": 2.0561,
+        "sd": 0.8669
+      },
+      "Agile": {
+        "n": 54,
+        "mean": 1.5556,
+        "sd": 0.604
+      },
+      "Hybrid": {
+        "n": 26,
+        "mean": 2.2308,
+        "sd": 0.6516
+      },
+      "Traditional": {
+        "n": 27,
+        "mean": 2.8889,
+        "sd": 0.8006
+      }
+    },
+    "flexibility_need": {
+      "Overall": {
+        "n": 107,
+        "mean": 3.3738,
+        "sd": 1.2172
+      },
+      "Agile": {
+        "n": 54,
+        "mean": 4.2222,
+        "sd": 0.7439
+      },
+      "Hybrid": {
+        "n": 26,
+        "mean": 3.1923,
+        "sd": 0.6939
+      },
+      "Traditional": {
+        "n": 27,
+        "mean": 1.8519,
+        "sd": 0.7181
+      }
+    },
+    "success": {
+      "Overall": {
+        "n": 107,
+        "mean": 4.0374,
+        "sd": 0.5126
+      },
+      "Agile": {
+        "n": 54,
+        "mean": 4.1296,
+        "sd": 0.4364
+      },
+      "Hybrid": {
+        "n": 26,
+        "mean": 3.9615,
+        "sd": 0.5277
+      },
+      "Traditional": {
+        "n": 27,
+        "mean": 3.9259,
+        "sd": 0.6156
+      }
+    }
+  },
+  "effect_sizes": {
+    "requirements_change": {
+      "eta_squared": 0.681642,
+      "bootstrap_95_ci": [
+        0.5798,
+        0.7859
+      ],
+      "permutation_p": 0.0002,
+      "holm_adjusted_p": 0.0022
+    },
+    "stakeholder_involvement": {
+      "eta_squared": 0.336536,
+      "bootstrap_95_ci": [
+        0.203,
+        0.5023
+      ],
+      "permutation_p": 0.0002,
+      "holm_adjusted_p": 0.0022
+    },
+    "deadline_pressure": {
+      "eta_squared": 0.221924,
+      "bootstrap_95_ci": [
+        0.1118,
+        0.375
+      ],
+      "permutation_p": 0.0002,
+      "holm_adjusted_p": 0.0022
+    },
+    "budget_pressure": {
+      "eta_squared": 0.298638,
+      "bootstrap_95_ci": [
+        0.183,
+        0.442
+      ],
+      "permutation_p": 0.0002,
+      "holm_adjusted_p": 0.0022
+    },
+    "project_risk": {
+      "eta_squared": 0.398938,
+      "bootstrap_95_ci": [
+        0.2625,
+        0.5536
+      ],
+      "permutation_p": 0.0002,
+      "holm_adjusted_p": 0.0022
+    },
+    "integration_complexity": {
+      "eta_squared": 0.252851,
+      "bootstrap_95_ci": [
+        0.1302,
+        0.407
+      ],
+      "permutation_p": 0.0002,
+      "holm_adjusted_p": 0.0022
+    },
+    "security_requirements": {
+      "eta_squared": 0.416168,
+      "bootstrap_95_ci": [
+        0.2979,
+        0.5688
+      ],
+      "permutation_p": 0.0002,
+      "holm_adjusted_p": 0.0022
+    },
+    "documentation_need": {
+      "eta_squared": 0.541707,
+      "bootstrap_95_ci": [
+        0.4373,
+        0.657
+      ],
+      "permutation_p": 0.0002,
+      "holm_adjusted_p": 0.0022
+    },
+    "project_size": {
+      "eta_squared": 0.414847,
+      "bootstrap_95_ci": [
+        0.2755,
+        0.5627
+      ],
+      "permutation_p": 0.0002,
+      "holm_adjusted_p": 0.0022
+    },
+    "flexibility_need": {
+      "eta_squared": 0.651192,
+      "bootstrap_95_ci": [
+        0.5508,
+        0.7487
+      ],
+      "permutation_p": 0.0002,
+      "holm_adjusted_p": 0.0022
+    },
+    "success": {
+      "eta_squared": 0.033913,
+      "bootstrap_95_ci": [
+        0.0033,
+        0.1386
+      ],
+      "permutation_p": 0.183363,
+      "holm_adjusted_p": 0.183363
+    }
+  },
+  "reliability": {
+    "FLEXIBILITY": {
+      "Overall": 0.9089,
+      "Agile": 0.8069,
+      "Hybrid": 0.6051,
+      "Traditional": 0.8958
+    },
+    "PERFORMANCE": {
+      "Overall": 0.8644,
+      "Agile": 0.8472,
+      "Hybrid": 0.6145,
+      "Traditional": 0.7339
+    },
+    "STRICTNESS": {
+      "Overall": 0.9179,
+      "Agile": 0.8854,
+      "Hybrid": 0.7731,
+      "Traditional": 0.7959
+    }
+  },
+  "industry_methodology_association": {
+    "chi_square": 84.4797,
+    "cramers_v": 0.6283,
+    "industry_categories": 7,
+    "methodology_categories": 3
+  },
+  "collection_wave_sensitivity": {
+    "first_15": {
+      "n": 15,
+      "methodology_distribution": {
+        "Agile": 8,
+        "Hybrid": 6,
+        "Traditional": 1
+      },
+      "reliability": {
+        "FLEXIBILITY": {
+          "Overall": 0.4891,
+          "Agile": 0.5063,
+          "Hybrid": 0.1132,
+          "Traditional": null
+        },
+        "PERFORMANCE": {
+          "Overall": 0.4545,
+          "Agile": 0.7579,
+          "Hybrid": -0.3333,
+          "Traditional": null
+        },
+        "STRICTNESS": {
+          "Overall": 0.5708,
+          "Agile": 0.4238,
+          "Hybrid": 0.7619,
+          "Traditional": null
+        }
+      }
+    },
+    "later": {
+      "n": 92,
+      "methodology_distribution": {
+        "Hybrid": 20,
+        "Agile": 46,
+        "Traditional": 26
+      },
+      "reliability": {
+        "FLEXIBILITY": {
+          "Overall": 0.9487,
+          "Agile": 0.8784,
+          "Hybrid": 0.8391,
+          "Traditional": 0.8518
+        },
+        "PERFORMANCE": {
+          "Overall": 0.8837,
+          "Agile": 0.817,
+          "Hybrid": 0.8644,
+          "Traditional": 0.7517
+        },
+        "STRICTNESS": {
+          "Overall": 0.9306,
+          "Agile": 0.8731,
+          "Hybrid": 0.7759,
+          "Traditional": 0.8127
+        }
+      }
+    }
+  },
+  "centroids": {
+    "Agile": {
+      "FLEXIBILITY": 4.0555,
+      "PERFORMANCE": 3.3333,
+      "STRICTNESS": 2.9166
+    },
+    "Traditional": {
+      "FLEXIBILITY": 2.1358,
+      "PERFORMANCE": 4.4444,
+      "STRICTNESS": 4.4444
+    }
+  },
+  "weights": {
+    "derivation": "Mean eta-squared of mapped survey factors, normalized so construct weights sum to 3.",
+    "cleaned_construct_effect_sizes": {
+      "FLEXIBILITY": 0.556456,
+      "PERFORMANCE": 0.260281,
+      "STRICTNESS": 0.402416
+    },
+    "cleaned_weights": {
+      "FLEXIBILITY": 1.369286,
+      "PERFORMANCE": 0.64048,
+      "STRICTNESS": 0.990235
+    },
+    "cleaned_influence_percent": {
+      "FLEXIBILITY": 45.6429,
+      "PERFORMANCE": 21.3493,
+      "STRICTNESS": 33.0078
+    },
+    "per_question_influence_percent": {
+      "FLEXIBILITY": 11.4107,
+      "PERFORMANCE": 7.1164,
+      "STRICTNESS": 6.6016
+    },
+    "per_question_influence_with_full_document_coverage_percent": {
+      "FLEXIBILITY": 8.558,
+      "PERFORMANCE": 5.3373,
+      "STRICTNESS": 4.9512
+    },
+    "raw_sample_weights": {
+      "FLEXIBILITY": 1.359729,
+      "PERFORMANCE": 0.65667,
+      "STRICTNESS": 0.983601
+    },
+    "stratified_bootstrap_95_ci": {
+      "FLEXIBILITY": [
+        1.1521,
+        1.6115
+      ],
+      "PERFORMANCE": [
+        0.4414,
+        0.8326
+      ],
+      "STRICTNESS": [
+        0.8529,
+        1.1217
+      ]
+    },
+    "status": "Survey-derived provisional weights; not independent criterion validation."
+  },
+  "classification_diagnostics": {
+    "cleaned": {
+      "equal_weights": {
+        "n": 81,
+        "correct": 73,
+        "agreement_percent": 90.1,
+        "wilson_95_ci_percent": [
+          81.7,
+          94.91
+        ],
+        "balanced_accuracy": 0.9074,
+        "cohen_kappa": 0.7857,
+        "per_class": {
+          "Agile": {
+            "precision": 0.96,
+            "recall": 0.8889
+          },
+          "Traditional": {
+            "precision": 0.8065,
+            "recall": 0.9259
+          }
+        },
+        "confusion_matrix": {
+          "Agile_actual_Agile_predicted": 48,
+          "Agile_actual_Traditional_predicted": 6,
+          "Traditional_actual_Agile_predicted": 2,
+          "Traditional_actual_Traditional_predicted": 25
+        },
+        "hybrid_forced_distribution": {
+          "Traditional": 13,
+          "Agile": 13
+        },
+        "criterion": "Historical methodology used; same-sample calibration diagnostic only."
+      },
+      "effect_size_weights": {
+        "n": 81,
+        "correct": 74,
+        "agreement_percent": 91.4,
+        "wilson_95_ci_percent": [
+          83.22,
+          95.75
+        ],
+        "balanced_accuracy": 0.9074,
+        "cohen_kappa": 0.8073,
+        "per_class": {
+          "Agile": {
+            "precision": 0.9434,
+            "recall": 0.9259
+          },
+          "Traditional": {
+            "precision": 0.8571,
+            "recall": 0.8889
+          }
+        },
+        "confusion_matrix": {
+          "Agile_actual_Agile_predicted": 50,
+          "Agile_actual_Traditional_predicted": 4,
+          "Traditional_actual_Agile_predicted": 3,
+          "Traditional_actual_Traditional_predicted": 24
+        },
+        "hybrid_forced_distribution": {
+          "Traditional": 13,
+          "Agile": 13
+        },
+        "criterion": "Historical methodology used; same-sample calibration diagnostic only."
+      }
+    },
+    "raw": {
+      "equal_weights": {
+        "n": 84,
+        "correct": 76,
+        "agreement_percent": 90.5,
+        "wilson_95_ci_percent": [
+          82.32,
+          95.09
+        ],
+        "balanced_accuracy": 0.9103,
+        "cohen_kappa": 0.7899,
+        "per_class": {
+          "Agile": {
+            "precision": 0.9623,
+            "recall": 0.8947
+          },
+          "Traditional": {
+            "precision": 0.8065,
+            "recall": 0.9259
+          }
+        },
+        "confusion_matrix": {
+          "Agile_actual_Agile_predicted": 51,
+          "Agile_actual_Traditional_predicted": 6,
+          "Traditional_actual_Agile_predicted": 2,
+          "Traditional_actual_Traditional_predicted": 25
+        },
+        "hybrid_forced_distribution": {
+          "Traditional": 14,
+          "Agile": 13
+        },
+        "criterion": "Historical methodology used; same-sample calibration diagnostic only."
+      },
+      "effect_size_weights": {
+        "n": 84,
+        "correct": 77,
+        "agreement_percent": 91.7,
+        "wilson_95_ci_percent": [
+          83.78,
+          95.9
+        ],
+        "balanced_accuracy": 0.9093,
+        "cohen_kappa": 0.8108,
+        "per_class": {
+          "Agile": {
+            "precision": 0.9464,
+            "recall": 0.9298
+          },
+          "Traditional": {
+            "precision": 0.8571,
+            "recall": 0.8889
+          }
+        },
+        "confusion_matrix": {
+          "Agile_actual_Agile_predicted": 53,
+          "Agile_actual_Traditional_predicted": 4,
+          "Traditional_actual_Agile_predicted": 3,
+          "Traditional_actual_Traditional_predicted": 24
+        },
+        "hybrid_forced_distribution": {
+          "Traditional": 14,
+          "Agile": 13
+        },
+        "criterion": "Historical methodology used; same-sample calibration diagnostic only."
+      }
+    }
+  },
+  "qualitative_themes": {
+    "challenge": {
+      "substantive_n": 69,
+      "themes": {
+        "Requirement uncertainty and scope": 27,
+        "Stakeholders and communication": 19,
+        "Governance, compliance, and security": 17,
+        "Team capability and culture": 16,
+        "Documentation and control": 15,
+        "Time, budget, and planning": 11,
+        "Technical delivery context": 9,
+        "Quality, risk, and safety": 8
+      }
+    },
+    "important_factor": {
+      "substantive_n": 71,
+      "themes": {
+        "Team capability and culture": 22,
+        "Requirement uncertainty and scope": 21,
+        "Stakeholders and communication": 17,
+        "Governance, compliance, and security": 16,
+        "Quality, risk, and safety": 10,
+        "Technical delivery context": 9,
+        "Time, budget, and planning": 5,
+        "Documentation and control": 4
+      }
+    }
+  },
+  "research_boundary": "Historical methodology used is not an independent label of methodology suitability."
+}

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="610" viewBox="0 0 1400 610">
+  <rect width="1400" height="610" fill="#f6f8fc"/>
+  <text x="70" y="60" font-family="Arial" font-size="30" font-weight="700" fill="#0f172a">Backend layered pattern</text>
+  <text x="70" y="94" font-family="Arial" font-size="17" fill="#475569">Each layer has one job. Requests travel down; response models travel back up.</text>
+  <g font-family="Arial">
+    <rect x="90" y="165" width="250" height="165" rx="18" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+    <text x="215" y="210" text-anchor="middle" font-size="22" font-weight="700" fill="#1e3a8a">Controller</text>
+    <text x="215" y="244" text-anchor="middle" font-size="15" fill="#475569">Routes and permissions</text>
+    <text x="215" y="270" text-anchor="middle" font-size="15" fill="#475569">Receives validated models</text>
+    <text x="215" y="296" text-anchor="middle" font-size="15" fill="#475569">Returns HTTP responses</text>
+    <path d="M355 247 H430" stroke="#64748b" stroke-width="3"/><path d="M430 247 l-12 -8 v16 z" fill="#64748b"/>
+    <rect x="445" y="145" width="300" height="205" rx="18" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+    <text x="595" y="190" text-anchor="middle" font-size="22" font-weight="700" fill="#065f46">Service</text>
+    <text x="595" y="224" text-anchor="middle" font-size="15" fill="#475569">Business rules and workflow</text>
+    <text x="595" y="250" text-anchor="middle" font-size="15" fill="#475569">Validation and scoring</text>
+    <text x="595" y="276" text-anchor="middle" font-size="15" fill="#475569">Coordinates repositories</text>
+    <text x="595" y="302" text-anchor="middle" font-size="15" fill="#475569">Builds response data</text>
+    <path d="M760 247 H835" stroke="#64748b" stroke-width="3"/><path d="M835 247 l-12 -8 v16 z" fill="#64748b"/>
+    <rect x="850" y="165" width="250" height="165" rx="18" fill="#fff7ed" stroke="#f59e0b" stroke-width="2"/>
+    <text x="975" y="210" text-anchor="middle" font-size="22" font-weight="700" fill="#92400e">Repository</text>
+    <text x="975" y="244" text-anchor="middle" font-size="15" fill="#475569">SQLAlchemy queries</text>
+    <text x="975" y="270" text-anchor="middle" font-size="15" fill="#475569">Creates and retrieves rows</text>
+    <text x="975" y="296" text-anchor="middle" font-size="15" fill="#475569">Commits transactions</text>
+    <path d="M1115 247 H1190" stroke="#64748b" stroke-width="3"/><path d="M1190 247 l-12 -8 v16 z" fill="#64748b"/>
+    <rect x="1205" y="165" width="150" height="165" rx="18" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="1280" y="210" text-anchor="middle" font-size="22" font-weight="700" fill="#5b21b6">Entity</text>
+    <text x="1280" y="244" text-anchor="middle" font-size="15" fill="#475569">Table mapping</text>
+    <text x="1280" y="270" text-anchor="middle" font-size="15" fill="#475569">Columns</text>
+    <text x="1280" y="296" text-anchor="middle" font-size="15" fill="#475569">Foreign keys</text>
+    <path d="M1280 345 V410 H975 V345" fill="none" stroke="#8b5cf6" stroke-width="3"/>
+    <text x="1125" y="402" text-anchor="middle" font-size="15" fill="#5b21b6">PostgreSQL</text>
+    <rect x="270" y="455" width="860" height="90" rx="16" fill="#fff" stroke="#94a3b8" stroke-width="2"/>
+    <text x="700" y="490" text-anchor="middle" font-size="18" font-weight="700" fill="#0f172a">Supporting concerns</text>
+    <text x="700" y="520" text-anchor="middle" font-size="15" fill="#475569">Pydantic models · middleware · settings · exceptions · response envelope · encryption · logging</text>
+  </g>
+</svg>
