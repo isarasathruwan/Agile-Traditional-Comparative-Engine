@@ -1,0 +1,192 @@
+name: Application CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: application-ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  backend-tests:
+    name: backend-tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: |
+            backend/requirements.txt
+            backend/requirements-dev.txt
+
+      - name: Install backend dependencies
+        run: pip install -r requirements-dev.txt
+
+      - name: Prepare backend report directory
+        run: mkdir -p test-results
+
+      - name: Run backend tests and coverage gate
+        run: >-
+          pytest -m "not integration"
+          --junitxml=test-results/backend-junit.xml
+          --cov=app --cov-branch
+          --cov-report=term
+          --cov-report=xml:coverage.xml
+          --cov-report=html:htmlcov
+          --cov-fail-under=75
+
+      - name: Add backend summary
+        if: ${{ !cancelled() }}
+        run: |
+          echo "### Backend tests" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Required pytest suite and 75% combined coverage gate completed." >> "$GITHUB_STEP_SUMMARY"
+          echo "- JUnit, XML, and HTML coverage are attached as workflow artifacts." >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload backend test artifacts
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5
+        with:
+          name: backend-test-report
+          path: |
+            backend/test-results/
+            backend/coverage.xml
+            backend/htmlcov/
+          retention-days: 14
+
+  postgres-integration:
+    name: postgres-integration
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: methodalign_ci
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d methodalign_ci"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+
+    env:
+      APP_ENV: test
+      POSTGRES_HOST: 127.0.0.1
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: methodalign_ci
+      POSTGRES_DRIVER: psycopg
+      JWT_SECRET: methodalign-ci-secret
+      DOCUMENT_ENCRYPTION_KEY_BASE64: MDEyMzQ1Njc4OWFiY2RlZjAxMjM0NTY3ODlhYmNkZWY=
+      GEMINI_API_KEY: ""
+      RUN_POSTGRES_TESTS: "1"
+
+    defaults:
+      run:
+        working-directory: backend
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: |
+            backend/requirements.txt
+            backend/requirements-dev.txt
+
+      - name: Install backend dependencies
+        run: pip install -r requirements-dev.txt
+
+      - name: Prepare PostgreSQL report directory
+        run: mkdir -p test-results
+
+      - name: Migrate an empty PostgreSQL database to head
+        run: alembic upgrade head
+
+      - name: Verify migration idempotency
+        run: alembic upgrade head
+
+      - name: Run PostgreSQL and pgvector integration tests
+        run: pytest -m integration --junitxml=test-results/postgres-junit.xml
+
+      - name: Upload PostgreSQL integration report
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5
+        with:
+          name: postgres-integration-report
+          path: backend/test-results/
+          retention-days: 14
+
+  browser-e2e:
+    name: browser-e2e
+    needs: [backend-tests, postgres-integration]
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    defaults:
+      run:
+        working-directory: frontend
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install frontend dependencies
+        run: npm ci
+
+      - name: Install Chromium and system dependencies
+        run: npx playwright install --with-deps chromium
+
+      - name: Run production-build Chromium journeys
+        run: npm run test:e2e
+        env:
+          CI: "true"
+
+      - name: Add browser summary
+        if: ${{ !cancelled() }}
+        run: |
+          echo "### Chromium end-to-end tests" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Participant recommendation, terminal document failure, and mobile overflow journeys completed." >> "$GITHUB_STEP_SUMMARY"
+          echo "- The HTML report, JUnit output, traces, screenshots, and videos are attached when produced."
+
+      - name: Upload browser test artifacts
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5
+        with:
+          name: playwright-report
+          path: |
+            frontend/playwright-report/
+            frontend/test-results/
+          retention-days: 14
